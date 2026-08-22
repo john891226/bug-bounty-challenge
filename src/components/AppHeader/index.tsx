@@ -1,7 +1,7 @@
 import { Grow, Box, Theme, Toolbar, Typography } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { styled, useTheme } from "@mui/material/styles";
-import React, { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { User } from "../../api/services/User/store";
 import AvatarMenu from "../AvatarMenu";
@@ -29,7 +29,7 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
   height: theme.tokens.header.height
 }));
 
-const AppHeader = React.forwardRef((props: AppHeaderProps, ref) => {
+const AppHeader = forwardRef<HTMLDivElement, AppHeaderProps>((props, ref) => {
   const { user, pageTitle } = props;
   const { t } = useTranslation("app");
   const theme = useTheme();
