@@ -25,6 +25,7 @@ export const defaultTranslationModules = [
   { locale: "de", texts: de },
   { locale: "en", texts: en }
 ];
+
 export const defaultLanguages = defaultTranslationModules.map((m) => m.locale);
 
 const resources = cloneDeep(
